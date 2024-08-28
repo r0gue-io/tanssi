@@ -73,7 +73,7 @@ jobs:
       # Build and package
       - name: Build ${{ matrix.package }}
         working-directory: tanssi
-        run: cargo b --profile=production -p ${{ matrix.package == 'tanssi-node' || matrix.package }} -F fast-runtime --target ${{ matrix.platform.target }}
+        run: cargo b --profile=production -p ${{ matrix.package }} -F fast-runtime --target ${{ matrix.platform.target }}
       - name: Package tanssi-node
         if: matrix.package == 'tanssi-node'
         working-directory: tanssi/${{ env.path }}
